@@ -3,7 +3,7 @@
 {% block body %}
     <h1>Blogposts list</h1>
 
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,14 +21,8 @@
                 <td>{{ blogPost.body }}</td>
                 <td>{{ blogPost.isPublished }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('blogpost_show', { 'id': blogPost.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('blogpost_edit', { 'id': blogPost.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a class="btn btn-primary" href="{{ path('blogpost_show', { 'id': blogPost.id }) }}">show</a>
+                    <a class="btn btn-primary" href="{{ path('blogpost_edit', { 'id': blogPost.id }) }}">edit</a>
                 </td>
             </tr>
         {% endfor %}

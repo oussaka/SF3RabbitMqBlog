@@ -27,7 +27,7 @@ class BlogPostController extends Controller
 
         $blogPosts = $em->getRepository('AppBundle:BlogPost')->findAll();
 
-        return $this->render('blogpost/index.html.twig', array(
+    return $this->render('@App/blogpost/index.html.twig', array(
             'blogPosts' => $blogPosts,
         ));
     }
@@ -57,7 +57,7 @@ class BlogPostController extends Controller
             return $this->redirectToRoute('blogpost_show', array('id' => $blogPost->getId()));
         }
 
-        return $this->render('blogpost/new.html.twig', array(
+        return $this->render('@App/blogpost/new.html.twig', array(
             'blogPost' => $blogPost,
             'form' => $form->createView(),
         ));
@@ -73,7 +73,7 @@ class BlogPostController extends Controller
     {
         $deleteForm = $this->createDeleteForm($blogPost);
 
-        return $this->render('blogpost/show.html.twig', array(
+    return $this->render('@App/blogpost/show.html.twig', array(
             'blogPost' => $blogPost,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -97,10 +97,10 @@ class BlogPostController extends Controller
             return $this->redirectToRoute('blogpost_edit', array('id' => $blogPost->getId()));
         }
 
-        return $this->render('blogpost/edit.html.twig', array(
-            'blogPost' => $blogPost,
-            'edit_form' => $editForm->createView(),
-            'delete_form' => $deleteForm->createView(),
+        return $this->render('@App/blogpost/edit.html.twig', array(
+            'blogPost'      => $blogPost,
+            'edit_form'     => $editForm->createView(),
+            'delete_form'   => $deleteForm->createView(),
         ));
     }
 
