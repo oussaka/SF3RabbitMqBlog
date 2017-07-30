@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\BlogPost;
+use AppBundle\Form\BlogPostType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -27,7 +28,7 @@ class BlogPostController extends Controller
 
         $blogPosts = $em->getRepository('AppBundle:BlogPost')->findAll();
 
-    return $this->render('@App/blogpost/index.html.twig', array(
+    return $this->render('AppBundle:blogpost:index.html.twig', array(
             'blogPosts' => $blogPosts,
         ));
     }
@@ -41,7 +42,7 @@ class BlogPostController extends Controller
     public function newAction(Request $request)
     {
         $blogPost = new Blogpost();
-        $form = $this->createForm('AppBundle\Form\BlogPostType', $blogPost);
+        $form = $this->createForm(BlogPostType::class, $blogPost);
         $content = $request->getContent();
 
         if(!empty($content)) {

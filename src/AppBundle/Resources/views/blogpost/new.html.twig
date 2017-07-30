@@ -1,5 +1,13 @@
 {% extends 'base.html.twig' %}
 
+{% form_theme form _self %}
+
+{%- block number_widget -%}
+    {%- set type = type|default('number') -%}
+    {{ block('form_widget_simple') }}
+{%- endblock number_widget -%}
+
+
 {% block body %}
     <h1>Blogpost creation</h1>
 
@@ -13,4 +21,22 @@
             <a href="{{ path('blogpost_index') }}">Back to the list</a>
         </li>
     </ul>
+{% endblock %}
+
+{% block javascripts %}
+
+    {{ parent() }}
+
+    <script type="text/javascript">
+        $(function() {
+            $('#product_datetime').datetimepicker({
+                inline: true,
+                sideBySide: true,
+                showTodayButton: true,
+                toolbarPlacement: 'bottom',
+                format: 'YYYY HH:mm:ss DD-MM'
+            });
+        });
+    </script>
+
 {% endblock %}
