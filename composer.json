@@ -26,7 +26,11 @@
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
-        "symfony/phpunit-bridge": "^3.0"
+        "symfony/phpunit-bridge": "^3.0",
+        "hautelook/alice-bundle": "^1.4",
+        "nelmio/alice": "^2.3",
+        "doctrine/data-fixtures": "*",
+        "doctrine/doctrine-fixtures-bundle": "^2.2@dev"
     },
     "scripts": {
         "symfony-scripts": [
@@ -45,9 +49,6 @@
         ]
     },
     "config": {
-        "platform": {
-            "php": "5.5.9"
-        }
     },
     "extra": {
         "symfony-app-dir": "app",
