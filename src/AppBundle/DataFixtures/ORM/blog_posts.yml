@@ -1,5 +1,5 @@
 AppBundle\Entity\BlogPost:
     post1{1..10}:
-        title: Post<current()> - <firstName()>
+        title: Post<current()> - <title()>
         body: <sentence()>
         isPublished: <boolean(75)>
