@@ -1,6 +1,7 @@
 parameters:
     download.folder:
-        downloadFolder: "./downloaded_pages/"
+        downloadFolder: '%kernel.project_dir%/web/downloaded_pages/'
+        createFolderMod: 0755
 
 services:
     rabbit.curl:
@@ -9,4 +10,8 @@ services:
 
     rabbit.pagehoover:
         class: RabbitBundle\Component\PageHoover
-        arguments: ['@rabbit.curl', '%download.folder%']
+        arguments: ['@rabbit.curl', '@old_sound_rabbit_mq.rabbitmq_download_image_producer', '%download.folder%']
+
+    rabbitmq_download_image_service:
+        class: RabbitBundle\Component\AMPQ\DownloadImageConsumer
+        arguments: ['@rabbit.curl', '%download.folder%', '@logger']

@@ -18,7 +18,7 @@ class HomeController extends Controller
         $pageHoover = $this->container->get('rabbit.pagehoover');
 
         // Download page
-        $page = 'https://www.example.com/';
+        $page = 'https://imgur.com/';
         $pageHoover->downloadPage($page);
 
         // Return status

@@ -114,11 +114,21 @@ lexik_maintenance:
 
 
 old_sound_rabbit_mq:
-       connections:
-           default:
-               host:     'localhost'
-               port:     5672
-               user:     'guest'
-               password: 'guest'
-               vhost:    '/'
-               lazy:     false
+    connections:
+        default:
+            host:     'localhost'
+            port:     5672
+            user:     'guest'
+            password: 'guest'
+            vhost:    '/'
+            lazy:     false
+    producers:
+        rabbitmq_download_image:
+            connection:             default
+            exchange_options:       { name: 'rabbitmq_download_image', type: direct }
+    consumers:
+        rabbitmq_download_image:
+            connection:             default
+            exchange_options:       { name: 'rabbitmq_download_image', type: direct }
+            queue_options:          { name: 'rabbitmq_download_image' }
+            callback:               rabbitmq_download_image_service
