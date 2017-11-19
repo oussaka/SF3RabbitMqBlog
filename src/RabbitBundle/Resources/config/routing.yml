@@ -1,0 +1,7 @@
+rabbit_homepage:
+    path:     /
+    defaults: { _controller: RabbitBundle:Home:index }
+
+rabbitmq_tutorial_download:
+    path:    "/rabbit/download"
+    defaults:   { _controller: "RabbitBundle:Home:download" }

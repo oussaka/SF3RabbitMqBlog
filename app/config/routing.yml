@@ -1,3 +1,7 @@
+rabbit:
+    resource: "@RabbitBundle/Resources/config/routing.yml"
+    prefix:   /
+
 app:
     resource: "@AppBundle/Controller/"
     type:     annotation

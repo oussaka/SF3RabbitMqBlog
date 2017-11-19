@@ -16,3 +16,5 @@
 /web/bundles/
 .idea/
 /.web-server-pid
+/web/downloaded_pages/*
+!/web/downloaded_pages/.gitkeep

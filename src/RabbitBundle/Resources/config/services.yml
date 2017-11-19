@@ -1,0 +1,12 @@
+parameters:
+    download.folder:
+        downloadFolder: "./downloaded_pages/"
+
+services:
+    rabbit.curl:
+        class: Curl\Curl
+        arguments: null
+
+    rabbit.pagehoover:
+        class: RabbitBundle\Component\PageHoover
+        arguments: ['@rabbit.curl', '%download.folder%']
