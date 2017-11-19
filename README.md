@@ -1,11 +1,15 @@
-Symfony Standard Edition
+Symfony 3 RabbitMq
 ========================
 
-Welcome to the Symfony Standard Edition - a fully-functional Symfony
-application that you can use as the skeleton for your new applications.
+My first encounter with RabbitMQ.
+**Source the excellent [afsy.fr Blog](http://afsy.fr/avent/2013/21-rabbitmq-et-Symfony2-traitements-asynchrones)**
 
-For details on how to download and get started with Symfony, see the
-[Installation][1] chapter of the Symfony Documentation.
+
+### To do :
+
+-  Gaufrette,
+- Goutte
+- Guzzle
 
 What's inside?
 --------------
